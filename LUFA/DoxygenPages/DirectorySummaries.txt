@@ -216,6 +216,13 @@
  *  The header files in this folder should not be included directly in user applications; the similarly named dispatch header files
  *  located in the parent Board directory should be included instead.
  *
+ *  \dir LUFA/Drivers/Board/AVR8/USBISPMKIIDM
+ *  \brief USBISP MKII DM board hardware driver files.
+ *
+ *  This folder contains drivers for hardware on all revisions of the USBISP MKII DM boards (http://radiokot.ru/forum/viewtopic.php?t=26417).
+ *  The header files in this folder should not be included directly in user applications; the similarly named dispatch header files
+ *  located in the parent Board directory should be included instead.
+ *
  *  \dir LUFA/Drivers/Board/AVR8/USBKEY
  *  \brief USBKEY board hardware driver files.
  *

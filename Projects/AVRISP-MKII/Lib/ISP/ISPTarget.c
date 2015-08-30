@@ -158,7 +158,7 @@ void ISPTarget_EnableTargetISP(void)
 	{
 		HardwareSPIMode = false;
 
-		DDRB  |= ((1 << 1) | (1 << 2));
+		DDRB  |= ((1 << 0) | (1 << 1) | (1 << 2));
 		PORTB |= ((1 << 0) | (1 << 3));
 
 		ISPTarget_ConfigureSoftwareSPI(SCKDuration);
@@ -176,7 +176,7 @@ void ISPTarget_DisableTargetISP(void)
 	}
 	else
 	{
-		DDRB  &= ~((1 << 1) | (1 << 2));
+		DDRB  &= ~((1 << 0) | (1 << 1) | (1 << 2));
 		PORTB &= ~((1 << 0) | (1 << 3));
 
 		/* Must re-enable rescue clock once software ISP has exited, as the timer for the rescue clock is
@@ -203,7 +203,7 @@ void ISPTarget_ConfigureRescueClock(void)
 	#else
 		/* Configure OCR1A as an output for the specified AVR model */
 		#if defined(USB_SERIES_2_AVR)
-		DDRC |= (1 << 6);
+		DDRB |= (1 << 7);
 		#else
 		DDRB |= (1 << 5);
 		#endif
@@ -211,8 +211,8 @@ void ISPTarget_ConfigureRescueClock(void)
 		/* Start Timer 1 to generate a 4MHz clock on the OCR1A pin */
 		TIMSK1 = 0;
 		TCNT1  = 0;
-		OCR1A  = ((F_CPU / 2 / ISP_RESCUE_CLOCK_SPEED) - 1);
-		TCCR1A = (1 << COM1A0);
+		OCR1C  = ((F_CPU / 2 / ISP_RESCUE_CLOCK_SPEED) - 1);
+		TCCR1A = (1 << 2);
 		TCCR1B = ((1 << WGM12) | (1 << CS10));
 	#endif
 }

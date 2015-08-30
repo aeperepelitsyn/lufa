@@ -105,6 +105,8 @@
 			#include "AVR8/BUMBLEB/Buttons.h"
 		#elif (BOARD == BOARD_EVK527)
 			#include "AVR8/EVK527/Buttons.h"
+		#elif (BOARD == BOARD_USBISPMKIIDM)
+			#include "AVR8/USBISPMKIIDM/Buttons.h"
 		#elif (BOARD == BOARD_USBTINYMKII)
 			#include "AVR8/USBTINYMKII/Buttons.h"
 		#elif (BOARD == BOARD_BENITO)

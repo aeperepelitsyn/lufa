@@ -198,6 +198,9 @@
 			/** Selects the XMEGA B1 Xplained specific board drivers, including the Button and LED drivers. */
 			#define BOARD_B1_XPLAINED          44
 
+			/** Selects the USBISP MKII DM specific board drivers, including the Button and LEDs drivers. */
+			#define BOARD_USBISPMKIIDM         45
+
 			#if !defined(__DOXYGEN__)
 				#define BOARD_                 BOARD_NONE
 
